@@ -1,0 +1,3 @@
+text-vanish:
+  js:
+    js/text_vanish.js: {}

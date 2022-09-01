@@ -21,7 +21,12 @@ class TextVanishBlock extends BlockBase {
     public function build(){
         return [
             '#theme' => 'text_vanish',
-            '#text' => $this->configuration['text']
+            '#text' => $this->configuration['text'],
+            '#attached' => [
+                'library' => [
+                    'text_vanish/text-vanish'
+                ]
+            ]
         ];
     }
 
