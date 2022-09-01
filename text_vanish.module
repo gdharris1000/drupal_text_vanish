@@ -1,0 +1,12 @@
+<?php
+
+function text_vanish_theme() {
+    return [
+        'text_vanish' => [
+            'variables' => [
+                'text' => NULL
+            ],
+            'template' => 'text_vanish_block'
+        ]
+    ];
+}
