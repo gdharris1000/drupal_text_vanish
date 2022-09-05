@@ -1,4 +1,7 @@
 text-vanish:
+  css:
+    theme:
+      css/text_vanish_style.css: {}
   js:
     js/text_vanish.js: {}
   dependencies:

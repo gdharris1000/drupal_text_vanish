@@ -25,7 +25,7 @@ class TextVanishBlock extends BlockBase {
             '#number' => $this->configuration['time'],
             '#attached' => [
                 'library' => [
-                    'text_vanish/text-vanish'
+                    'text_vanish/text-vanish',
                 ],
             'drupalSettings' => ['text_vanish' => ['time' => $this->configuration['time']]],
             ],

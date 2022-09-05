@@ -32,7 +32,7 @@
   }, time);
 
   function hideText(element) {
-    element.innerHTML = "&nbsp;&nbsp;";
+    element.classList.add("vanished-text");
     console.log(element.innerHTML);
   }
 })(jQuery, Drupal, drupalSettings);
