@@ -29,7 +29,7 @@
       hideText(element);
       counter++;
     }
-  }, time * 100);
+  }, time);
 
   function hideText(element) {
     element.innerHTML = "&nbsp;&nbsp;";
