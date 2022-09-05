@@ -22,11 +22,16 @@ class TextVanishBlock extends BlockBase {
         return [
             '#theme' => 'text_vanish',
             '#text' => $this->configuration['text'],
+            '#number' => $this->configuration['time'],
             '#attached' => [
                 'library' => [
                     'text_vanish/text-vanish'
-                ]
-            ]
+                ],
+            'drupalSettings' => ['text_vanish' => ['time' => $this->configuration['time']]],
+            ],
+            '#cache' => [
+                'max-age' => 0
+            ],
         ];
     }
 
@@ -35,11 +40,16 @@ class TextVanishBlock extends BlockBase {
             '#type' => 'textfield',
             '#title' => t('Text'),
         ];
+        $form['time'] = [
+            '#type' => 'number',
+            '#title' => t('Speed of vanishing'),
+        ];
 
         return $form;
     }
 
     public function blockSubmit($form, FormStateInterface $form_state){
         $this->configuration['text'] = $form_state->getValue('text');
+        $this->configuration['time'] = $form_state->getValue('time');
     }
 }

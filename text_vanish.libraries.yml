@@ -1,3 +1,7 @@
 text-vanish:
   js:
     js/text_vanish.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings

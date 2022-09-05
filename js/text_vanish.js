@@ -1,31 +1,38 @@
-const element_text = document.getElementById("text-vanish-content");
+(function ($, Drupal, drupalSettings) {
+  drupalSettings.text_vanish.time
+    ? (time = drupalSettings.text_vanish.time)
+    : (time = 0);
 
-text_split = element_text.innerHTML.split("");
+  console.log(time);
+  const element_text = document.getElementById("text-vanish-content");
 
-text_split_ids = [];
+  text_split = element_text.innerHTML.split("");
 
-for (i = 0; i < text_split.length; i++) {
-  text_split_ids.push(
-    "<span id='text-split-" + i + "'>" + text_split[i] + "</span>"
-  );
-}
+  text_split_ids = [];
 
-element_text.innerHTML = text_split_ids.join("");
-
-console.log(element_text.innerHTML);
-
-var counter = 0;
-
-setInterval(function () {
-  if (counter < text_split.length) {
-    let element_id = "text-split-" + counter;
-    element = document.getElementById(element_id);
-    hideText(element);
-    counter++;
+  for (i = 0; i < text_split.length; i++) {
+    text_split_ids.push(
+      "<span id='text-split-" + i + "'>" + text_split[i] + "</span>"
+    );
   }
-}, 1000);
 
-function hideText(element) {
-  element.innerHTML = " ";
-  console.log(element.innerHTML);
-}
+  element_text.innerHTML = text_split_ids.join("");
+
+  console.log(element_text.innerHTML);
+
+  var counter = 0;
+
+  setInterval(function () {
+    if (counter < text_split.length) {
+      let element_id = "text-split-" + counter;
+      element = document.getElementById(element_id);
+      hideText(element);
+      counter++;
+    }
+  }, time * 1000);
+
+  function hideText(element) {
+    element.innerHTML = "x";
+    console.log(element.innerHTML);
+  }
+})(jQuery, Drupal, drupalSettings);
