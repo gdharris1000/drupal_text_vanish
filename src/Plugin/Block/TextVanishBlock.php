@@ -39,10 +39,12 @@ class TextVanishBlock extends BlockBase {
         $form['text'] = [
             '#type' => 'textfield',
             '#title' => t('Text'),
+            '#placeholder' => $this->configuration['text'] ? $this->configuration['text'] : ''
         ];
         $form['time'] = [
             '#type' => 'number',
             '#title' => t('Speed of vanishing'),
+            '#placeholder' => $this->configuration['time'] ? $this->configuration['time'] : ''
         ];
 
         return $form;

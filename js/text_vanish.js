@@ -29,10 +29,10 @@
       hideText(element);
       counter++;
     }
-  }, time * 1000);
+  }, time * 100);
 
   function hideText(element) {
-    element.innerHTML = "x";
+    element.innerHTML = "&nbsp;&nbsp;";
     console.log(element.innerHTML);
   }
 })(jQuery, Drupal, drupalSettings);
