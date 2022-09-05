@@ -1,13 +1,16 @@
 (function ($, Drupal, drupalSettings) {
+  //Get time value from the block config
   drupalSettings.text_vanish.time
     ? (time = drupalSettings.text_vanish.time)
     : (time = 0);
 
-  console.log(time);
+  //Get text element
   const element_text = document.getElementById("text-vanish-content");
 
+  //Split by character
   text_split = element_text.innerHTML.split("");
 
+  //Add span tag to each character
   text_split_ids = [];
 
   for (i = 0; i < text_split.length; i++) {
@@ -16,10 +19,10 @@
     );
   }
 
+  //Replace text element with the version that has a span tag for each character
   element_text.innerHTML = text_split_ids.join("");
 
-  console.log(element_text.innerHTML);
-
+  //After an interval make each character disappear
   var counter = 0;
 
   setInterval(function () {
@@ -33,6 +36,5 @@
 
   function hideText(element) {
     element.classList.add("vanished-text");
-    console.log(element.innerHTML);
   }
 })(jQuery, Drupal, drupalSettings);
