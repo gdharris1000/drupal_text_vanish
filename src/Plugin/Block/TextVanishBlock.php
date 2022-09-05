@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @Block(
  * id = "text_vanish_block",
  * admin_label = @Translation("Text Vanish Block"),
- * category = @Translation("Gareth")
+ * category = @Translation("Text Vanish Block")
  * )
  * 
 */
