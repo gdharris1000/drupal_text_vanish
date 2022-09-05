@@ -39,13 +39,15 @@ class TextVanishBlock extends BlockBase {
         $form['text'] = [
             '#type' => 'textarea',
             '#title' => t('Text'),
-            '#default_value' => $this->configuration['text'] ? $this->configuration['text'] : ''
+            '#default_value' => $this->configuration['text'] ? $this->configuration['text'] : '',
+            '#required' => true
         ];
         $form['time'] = [
             '#type' => 'number',
             '#title' => t('Speed of vanishing'),
             '#description' => t('Milliseconds'),
-            '#default_value' => $this->configuration['time'] ? $this->configuration['time'] : 'Enter time '
+            '#default_value' => $this->configuration['time'] ? $this->configuration['time'] : 'Enter time ',
+            '#required' => true
         ];
 
         return $form;
