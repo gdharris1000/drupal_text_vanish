@@ -1,3 +1,14 @@
+@keyframes vanish-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .vanished-text {
-  color: rgba(0, 0, 0, 0);
+  animation-name: vanish-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
